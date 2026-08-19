@@ -1,0 +1,37 @@
+class AgyMcp < Formula
+  desc "MCP server for the Google Antigravity CLI (agy) with async supervision"
+  homepage "https://github.com/tphakala/agy-mcp"
+  version "2.3.0"
+  license "MIT"
+
+  on_macos do
+    on_arm do
+      url "https://github.com/tphakala/agy-mcp/releases/download/v2.3.0/agy-mcp_2.3.0_darwin_arm64.tar.gz"
+      sha256 "a7c4be73072a6ed7efaa8b60693b26f0db64f246d2c0d354ae553cb75a841cb8"
+    end
+    on_intel do
+      url "https://github.com/tphakala/agy-mcp/releases/download/v2.3.0/agy-mcp_2.3.0_darwin_amd64.tar.gz"
+      sha256 "b160cc8b861b433457ac8ceaef0f9e5dd33609997081456931130f9e4657ec0e"
+    end
+  end
+
+  on_linux do
+    on_arm do
+      url "https://github.com/tphakala/agy-mcp/releases/download/v2.3.0/agy-mcp_2.3.0_linux_arm64.tar.gz"
+      sha256 "c5b058e6f48a1138e4c8394f0a6789c94ad0fa4c002638883957e2e72ce93d75"
+    end
+    on_intel do
+      url "https://github.com/tphakala/agy-mcp/releases/download/v2.3.0/agy-mcp_2.3.0_linux_amd64.tar.gz"
+      sha256 "6a208e9d70419d6d013b64c63a8c84ed4bfe95f70c43c37972b81d053fba8256"
+    end
+  end
+
+  def install
+    bin.install "agy-mcp"
+  end
+
+  test do
+    # agy-mcp serves over stdio by default, which blocks; -h prints usage and exits 0.
+    assert_match "Usage of", shell_output("#{bin}/agy-mcp -h 2>&1")
+  end
+end
