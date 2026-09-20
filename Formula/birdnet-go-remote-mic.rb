@@ -11,14 +11,21 @@ class BirdnetGoRemoteMic < Formula
 
   if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
     url "https://github.com/tphakala/birdnet-go-remote-mic/releases/download/v0.1.0/birdnet-go-remote-mic_0.1.0_linux_amd64.tar.gz"
-    sha256 "8509009666a3bc7442dad95a6d43c429a4ae88b0ee2a8eb1c55d938cb16b2b2e"
+    sha256 "53b9598685670406ef1240e449257813c193831d66ded6e647a5cbe97be5c7dc"
+    define_method(:install) do
+      bin.install "remote-mic"
+    end
+  end
+  if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/tphakala/birdnet-go-remote-mic/releases/download/v0.1.0/birdnet-go-remote-mic_0.1.0_linux_armv6.tar.gz"
+    sha256 "ce9132ff539d71f929f2fde659b5bf9ba4ba96070232e6971a9229c62908f829"
     define_method(:install) do
       bin.install "remote-mic"
     end
   end
   if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/tphakala/birdnet-go-remote-mic/releases/download/v0.1.0/birdnet-go-remote-mic_0.1.0_linux_arm64.tar.gz"
-    sha256 "2abc81dec4bf69abfa6067b91b7b4b94923f86ff0fbf3a49f34ca31784df690e"
+    sha256 "b83dbb12ec2f6d880c37f73310c3bf554d33600b55dec66a45d75d0d039d5d57"
     define_method(:install) do
       bin.install "remote-mic"
     end
