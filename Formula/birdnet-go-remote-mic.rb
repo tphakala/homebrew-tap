@@ -5,27 +5,27 @@
 class BirdnetGoRemoteMic < Formula
   desc "Remote microphone appliance for BirdNET-Go (ALSA capture served over RTSP)"
   homepage "https://github.com/tphakala/birdnet-go-remote-mic"
-  version "0.3.0"
+  version "0.4.0"
   license "Apache-2.0"
   depends_on :linux
 
   if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/tphakala/birdnet-go-remote-mic/releases/download/v0.3.0/birdnet-go-remote-mic_0.3.0_linux_amd64.tar.gz"
-    sha256 "a757acfe04eb35ff8858518a8858c67861c4ff5e16ccbcf0586659c9945bb582"
+    url "https://github.com/tphakala/birdnet-go-remote-mic/releases/download/v0.4.0/birdnet-go-remote-mic_0.4.0_linux_amd64.tar.gz"
+    sha256 "2dedadfc2e8022ac4deb67d6b0f033e3fc5e86b33010acac4471f7d1d48c69d3"
     define_method(:install) do
       bin.install "remote-mic"
     end
   end
   if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/tphakala/birdnet-go-remote-mic/releases/download/v0.3.0/birdnet-go-remote-mic_0.3.0_linux_armv6.tar.gz"
-    sha256 "a81bc6d13ccb4b2696514c7c3f606f9826008cddc4d6951ee0370533ca99ed53"
+    url "https://github.com/tphakala/birdnet-go-remote-mic/releases/download/v0.4.0/birdnet-go-remote-mic_0.4.0_linux_armv6.tar.gz"
+    sha256 "03b646fe80bc383432ec30963dd685035744bd05d1f29ff42e5272c8030e0b52"
     define_method(:install) do
       bin.install "remote-mic"
     end
   end
   if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/tphakala/birdnet-go-remote-mic/releases/download/v0.3.0/birdnet-go-remote-mic_0.3.0_linux_arm64.tar.gz"
-    sha256 "8336c9c99e685e633555bbf4ea4bd8ab453db56c1f95bdcd4ac1fd9e45dfacb7"
+    url "https://github.com/tphakala/birdnet-go-remote-mic/releases/download/v0.4.0/birdnet-go-remote-mic_0.4.0_linux_arm64.tar.gz"
+    sha256 "300c3156327353adbacf52b37688555b20de23baa6e9fe87d9105c030a16e487"
     define_method(:install) do
       bin.install "remote-mic"
     end
