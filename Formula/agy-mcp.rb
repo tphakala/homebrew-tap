@@ -5,21 +5,21 @@
 class AgyMcp < Formula
   desc "Model Context Protocol (MCP) server for Google Antigravity CLI (agy)"
   homepage "https://github.com/tphakala/agy-mcp"
-  version "2.10.0"
+  version "2.11.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tphakala/agy-mcp/releases/download/v2.10.0/agy-mcp_2.10.0_darwin_amd64.tar.gz"
-      sha256 "50d64e64fed4bfab2bcf9437120cba9cfcb38d6ef4a31cdd25bc4fbece8c5bdb"
+      url "https://github.com/tphakala/agy-mcp/releases/download/v2.11.0/agy-mcp_2.11.0_darwin_amd64.tar.gz"
+      sha256 "4fac3087e0ca01c8dc54bd59a581bcc66037d3e076c5733b05abd08d61180a5e"
 
       define_method(:install) do
         bin.install "agy-mcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tphakala/agy-mcp/releases/download/v2.10.0/agy-mcp_2.10.0_darwin_arm64.tar.gz"
-      sha256 "38855df7e1aeebfed00ccc00a03d8c63c477be3080352f98689b075415bb95e4"
+      url "https://github.com/tphakala/agy-mcp/releases/download/v2.11.0/agy-mcp_2.11.0_darwin_arm64.tar.gz"
+      sha256 "cd28c619960ca23fde91696564c0a2ee504668cbc3fa20c8e6d302f6d29e3108"
 
       define_method(:install) do
         bin.install "agy-mcp"
@@ -29,15 +29,15 @@ class AgyMcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tphakala/agy-mcp/releases/download/v2.10.0/agy-mcp_2.10.0_linux_amd64.tar.gz"
-      sha256 "ebda25dac57c337681fd2d7f7d9a10044597f2e0621b16717329c85f45ecfcee"
+      url "https://github.com/tphakala/agy-mcp/releases/download/v2.11.0/agy-mcp_2.11.0_linux_amd64.tar.gz"
+      sha256 "719dc5018ffcee41d37db85bd8269eebbc0141e19d00478735bdb0f64bb46873"
       define_method(:install) do
         bin.install "agy-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tphakala/agy-mcp/releases/download/v2.10.0/agy-mcp_2.10.0_linux_arm64.tar.gz"
-      sha256 "13d1bc3f60bb59d7a2386e193b3aeba991d0f8a3e33a8bd8ed071a5a858aa6fa"
+      url "https://github.com/tphakala/agy-mcp/releases/download/v2.11.0/agy-mcp_2.11.0_linux_arm64.tar.gz"
+      sha256 "93ce8ee86d20959c746b3506a4d88b230613faae161d99ba3eebc8cb23873c8a"
       define_method(:install) do
         bin.install "agy-mcp"
       end
